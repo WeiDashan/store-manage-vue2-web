@@ -1,23 +1,71 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
+// import store from '@/store'
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+	{
+		path: '/',
+		name: 'Index',
+		component: () => import('@/views'),
+		children: [
+			{
+				path: '/user',
+				name: 'UserList',
+				component: () => import('@/views/user')
+			},
+			{
+				path: '/brand',
+				name: 'BrandList',
+				component: () => import('@/views/brand')
+			},
+			{
+				path: '/role',
+				name: 'RoleList',
+				component: () => import('@/views/role')
+			},
+			{
+				path: '/roleusers',
+				name: 'RoleUsers',
+				component: () => import('@/views/role/users')
+			},
+			{
+				path: '/resource',
+				name: 'ResourceList',
+				component: () => import('@/views/resource')
+			},
+			{
+				path: '/roleresource',
+				name: 'RoleResource',
+				component: () => import('@/views/role/resource')
+			},
+			{
+				path: '/category',
+				name: 'CategoryList',
+				component: () => import('@/views/category')
+			},
+			{
+				path: '/spu',
+				name: 'SpuList',
+				component: () => import('@/views/spu')
+			},
+			{
+				path: '/sku',
+				name: 'SkuList',
+				component: () => import('@/views/sku')
+			},
+			{
+				path: '/product',
+				name: 'ProductList',
+				component: () => import('@/views/product')
+			}
+		]
+	},
+	{
+		path: '/login',
+		name: 'Login',
+		component: () => import('@/views/login')
+	}
 ]
 
 const router = new VueRouter({
@@ -25,5 +73,17 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+router.beforeEach((to,from,next) => {
+	// console.log(store)
+	next()
+	/* if(to.path === '/login') {
+		next()
+		return
+	}
+	if(store.getters.GET_TOKEN) {
+		next()
+		return
+	}
+	next('/login')	 */
+})
 export default router
