@@ -17,6 +17,7 @@
 				<el-menu-item index="/brand">品牌管理</el-menu-item>
 				<el-menu-item index="/category">分类管理</el-menu-item>
 				<el-menu-item index="/product">商品管理</el-menu-item>
+        <el-menu-item index="/secKill">秒杀管理</el-menu-item>
 			</el-submenu>
 		</el-menu>
 	</div>
@@ -24,7 +25,7 @@
 
 <script>
 	export default {
-		name: 'WyMenu',
+		name: 'WdsMenu',
 		data() {
 			return {
 				menu: []

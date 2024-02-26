@@ -19,7 +19,7 @@
 	-->
 	<el-container class="wrap">
 		<el-aside width="200px">
-			<WyMenu></WyMenu>
+			<WdsMenu></WdsMenu>
 		</el-aside>
 		<el-container>
 			<el-header>
@@ -35,11 +35,11 @@
 </template>
 
 <script>
-	import WyMenu from '@/components/menu'
+	import WdsMenu from '@/components/menu'
 	export default {
 		name: 'Index',
 		components: {
-			WyMenu
+      WdsMenu
 		}
 	}
 </script>

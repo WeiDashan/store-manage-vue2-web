@@ -58,7 +58,12 @@ const routes = [
 				path: '/product',
 				name: 'ProductList',
 				component: () => import('@/views/product')
-			}
+			},
+			{
+				path: '/secKill',
+				name: 'SecKill',
+				component: () => import('@/views/secKill')
+			},
 		]
 	},
 	{

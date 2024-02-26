@@ -87,7 +87,7 @@ export default {
 			
 		},
 		change(categoryId) {
-      console.log(categoryId)
+      // console.log(categoryId)
 			this.spuForm.spus = []
 			this.get('/pms-product/getAttr',{categoryIds: categoryId},response => {
         console.log(response.skus)
@@ -101,7 +101,7 @@ export default {
 					response.skus[i].addval = ''
 				}
 
-        console.log(response.skus)
+        // console.log(response.skus)
 
 				this.$emit('setSkus',response.skus)
 			})

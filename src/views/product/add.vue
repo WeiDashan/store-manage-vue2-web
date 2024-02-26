@@ -97,6 +97,7 @@
           // console.log(response)
 					this.delChildren(response.categorys)
 					this.params = response
+          // console.log(this.params)
 				})
 			},
 
@@ -169,7 +170,7 @@
           //设置 detailContent
           this.detailContent = this.params.pmsProduct.detailHtml
           // console.log(this.detailContent)
-          // console.log(this.params)
+          console.log(this.params)
         })
       },
       delChildren(items) {
