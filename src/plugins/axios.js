@@ -10,8 +10,8 @@ import qs from 'qs'
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 let config = {
-	// baseURL: 'http://49.233.51.52:8183'
-	baseURL: 'http://127.0.0.1:8183'
+	baseURL: 'http://49.233.51.52:8183'
+	// baseURL: 'http://127.0.0.1:8183'
   // baseURL: process.env.baseURL || process.env.apiUrl || ""
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
