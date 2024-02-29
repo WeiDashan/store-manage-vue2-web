@@ -36,9 +36,9 @@ export default {
 		},
 		login() {
 			this.post(this.url.login, this.form,response => {
-				console.log(response)
+				// console.log(response)
 				this.$store.commit('SET_TOKEN',response.token)
-				this.$store.commit('SET_MENU',response.front)
+				// this.$store.commit('SET_MENU',response.front)
 				this.$router.push('/')
 			})
 		}

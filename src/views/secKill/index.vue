@@ -26,6 +26,7 @@
       <el-table-column label="成功数量" prop="successAmount"></el-table-column>
       <el-table-column label="秒杀开始时间" prop="startTime"></el-table-column>
       <el-table-column label="秒杀结束时间" prop="endTime"></el-table-column>
+      <el-table-column label="是否有效" prop="active"></el-table-column>
     </el-table>
     <el-pagination
         background
@@ -82,6 +83,7 @@ export default {
         this.tableData.records.forEach((item,index)=>{
           item.productName = response.pmsProducts[index].name
           item.icon = response.pmsProducts[index].img
+          item.active = item.active===1?'有效':'失效'
           let arr = JSON.parse(response.stocks[index].skuList);
           let str = ""
           arr.forEach(obj=>{
